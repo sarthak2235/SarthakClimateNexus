@@ -1,0 +1,304 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box; /* Ensures padding doesn't affect the set dimensions */
+}
+
+/* Body and Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111; /* Dark background for the whole page */
+    color: #ddd; /* Light grey text for readability */
+    line-height: 1.6;
+}
+
+/* Container for content */
+.container {
+    max-width: 1200px; /* Sets the maximum width of the container */
+    margin: 0 auto; /* Centers the container horizontally */
+    padding: 0 20px; /* Adds padding inside the container */
+}
+
+/* Header and Navigation Styles */
+header {
+/*    background: #222;*/
+    background-color: rgba(51, 51, 51, 0.5);
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ee6e73;
+}
+
+/* Main Content and Sections */
+.main-content, .social-media-strip {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03); /* Semi-transparent background */
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Research Highlights */
+.section h2 {
+    text-align: center;
+    color: #ee6e73; /* Pinkish-red for the main section heading "Recent Research Highlights" */
+    margin-top: 0;
+    margin-bottom: 0; /* Add space between the heading and the research highlights */
+}
+
+#research-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 40px; /* Add padding to the top of the container */
+    padding-left: 30px; /* Adjust padding as needed */
+    padding-right: 30px; /* Adjust padding as needed */
+}
+
+.research-highlight {
+    flex: 1 1 calc(33.333% - 40px);
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent version of #333 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: calc(33.333% - 40px);
+    color: #ffffff; /* White for descriptions and default text */
+}
+
+.research-highlight h3 {
+    color: #9ACD32; /* Greenish-yellow for the heading of each highlight */
+}
+
+.research-highlight h3 a {
+    color: #9ACD32; /* Ensure links within h3 inherit the greenish-yellow color */
+    text-decoration: none; /* Removes underline */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bounce effect */
+}
+
+.research-highlight h3 a:visited {
+    color: #9ACD32; /* Greenish-yellow for visited links */
+}
+
+.research-highlight h3 a:hover {
+    transform: scale(1.1); /* Keeps the bounce effect */
+}
+
+.research-highlight h3 a:active {
+    color: #9ACD32; /* Greenish-yellow when clicked */
+}
+
+.research-highlight figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.research-highlight a {
+    color: #ffffff; /* White for other links outside h3 to match descriptions */
+    text-decoration: none; /* Removes underline */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bounce effect */
+}
+
+.research-highlight a:visited {
+    color: #ffffff; /* White for visited links outside h3 */
+}
+
+.research-highlight a:hover {
+    transform: scale(1.1); /* Keeps the bounce effect */
+}
+
+.research-highlight a:active {
+    color: #ffffff; /* White when clicked outside h3 */
+}
+/* Social Media Links */
+.social-media a {
+    display: inline-block;
+    margin: 0 15px; /* Space around social media icons */
+}
+
+.social-media a img {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bounce effect */
+}
+
+/* Prevent zoom cursor on Gmail and LinkedIn icons in footer */
+footer .social-media img[src$="gmail.jpg"],
+footer .social-media img[src$="linkedin.jpg"] {
+    cursor: pointer !important;
+}
+.social-media-strip {
+    background-color: #333; /* Dark background for social media strip */
+    padding: 20px 0;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.5);
+/*    background-color: #222; /* Footer background color */*/
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 300px; /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
+    border-radius: 50%; /* This makes the photo circular */
+    object-fit: cover; /* Ensures the image covers the space without stretching */
+    border: 3px solid #fff; /* Optional: adds a white border around the photo */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Optional: adds a shadow for depth */
+    display: block;
+    margin: 10px auto; /* Centers the photo horizontally within the section */
+}
+
+
+/* Zoom Modal Styles */
+#image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#image-modal img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#image-modal span {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Optional gradient background */
+}
+
+body {
+    background: none !important;
+    position: relative;
+    z-index: 0;
+}
+
+.more-text {
+    display: none;
+}
+
+.toggle-more {
+    display: inline-block;
+    margin-left: 8px;
+    color: #9ACD32;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.toggle-more:hover {
+    color: #c6ff00;
+}
+
+footer h2.contact-heading {
+    background: linear-gradient(to right, #ff6ec4, #ee6e73);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Increase vertical spacing for touch targets */
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px; /* Adjust size for smaller screens */
+    }
+
+    #research-highlights {
+        flex-direction: column;
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .research-highlight {
+        max-width: 100%;
+        margin: 20px 0; /* Add more vertical spacing between items */
+    }
+
+    .section {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    h2, h3, p {
+        margin: 10px; /* Add default margin for small screens */
+    }
+
+    .social-media a img {
+        width: 23px; /* Increase the size of social media icons */
+        height: 23px;
+    }
+}
